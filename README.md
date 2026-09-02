@@ -1,4 +1,4 @@
-# Masar (مسار) 🚚
+# Masar - logistics & shipping company
  
 A concept marketing website for a fictional logistics & shipping company — built as a portfolio project to showcase front-end development with a modern React stack.
  
