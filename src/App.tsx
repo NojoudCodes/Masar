@@ -1,10 +1,13 @@
+import { Route, Routes } from 'react-router'
 import './App.css'
 import Home from './pages/Home'
 
 export default function App() {
   return (
     <>
-      <Home />
+    <Routes>
+      <Route path="/" element={ <Home /> } />
+    </Routes>
     </>
   )
 }

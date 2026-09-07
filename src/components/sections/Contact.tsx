@@ -3,19 +3,21 @@ import { AnimatePresence, motion } from "motion/react";
 import Section from "../ui/Section";
 import Subtitle from "../ui/Subtitle";
 import Button from "../ui/Button";
+import { useForm } from "react-hook-form";
+
+type ContactFormData = {
+  company: string;
+  email: string;
+  select: string;
+};
 
 export default function Contact() {
   const [isMessageOpen, setIsMessage] = useState(false)
-  const [form, setForm] = useState({
-    company: "",
-    email: "",
-    shipping: "land"
-  })
+  const { register, handleSubmit, formState: { errors } } = useForm<ContactFormData>()
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    setForm({...form, [e.target.id]: e.target.value})
+  const onSubmit = (data: ContactFormData) => {
+      console.log(data)
+      setIsMessage(true)
   }
 
   const shippingMethods = [
@@ -47,21 +49,16 @@ export default function Contact() {
         <p className="text-muted text-sm mt-4 leading-6">عبّي البيانات وفريق المبيعات يتواصل معك خلال يوم عمل واحد  <br />بعرض سعر مخصص.</p>
       </div>
       <div className="w-full xl:flex-1 bg-ink-secondary p-7 mt-8 xl:mt-0">
-        <form onSubmit={(e: React.SubmitEvent<HTMLFormElement>) => {
-          e.preventDefault();
-          console.log(form)
-          setIsMessage(true)
-          
-        }} className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
           <div className="bg-ink-tertiary py-1 px-4 rounded-xl">
             <input 
               type="text" 
               id="company"
               placeholder="اسم الشركة"
               className="w-full py-2"
-              value={form.company}
-              onChange={handleChange}
+              {...register("company", {required: true })}
             />
+            { errors.company && <p className="text-red-500">الحقل مطلوب</p> }
           </div>
           <div className="bg-ink-tertiary py-1 px-4 rounded-xl">
             <input 
@@ -69,17 +66,17 @@ export default function Contact() {
               id="email" 
               placeholder="البريد الالكتروني" 
               className="w-full py-2"
-              value={form.email}
-              onChange={handleChange}
+              {...register("email", {required: true })}
             />
+            { errors.email && <p className="text-red-500">الحقل مطلوب</p> }
           </div>
           <div className="bg-ink-tertiary py-1 px-4 rounded-xl">
             <select 
               id="shipping" 
               className="w-full py-3"
-              value={form.shipping} 
-              onChange={handleChange}
+              {...register("select", {required: "ختر نوع الشحن", validate: (value) => value !== "" || "اختر نوع الشحن",})}
             >
+              <option value="">اختر نوع الشحن</option>
               {shippingMethods.map((shipping) => (
                 <option
                   key={shipping.id}
@@ -89,6 +86,7 @@ export default function Contact() {
                 </option>
               ))}
             </select>
+            {errors.select && <p className="text-red-500">الحقل مطلوب</p> }
           </div>
           <button 
             type="submit"
