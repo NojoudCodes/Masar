@@ -72,7 +72,7 @@ export default function Navbar() {
         </div>
       </div>
       <Button
-        path="/"
+        path="#contact"
         text="احصل على عرض سعر"
         styles="hidden md:flex bg-lime hover:bg-white text-ink-primary px-5 py-3 font-semibold text-sm rounded-sm"
       />

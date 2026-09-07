@@ -17,12 +17,12 @@ export default function Hero() {
         <p className="text-muted text-sm xl:text-lg mt-4">شبكة لوجستية تغطي ٢٦ دولة، مع تتبع لحظي لكل شحنة من لحظة الاستلام حتى التسليم النهائي.</p>
         <div className="flex gap-3 mt-8">
           <Button
-            path="/"
+            path="#contact"
             text="احصل على عرض سعر"
             styles="bg-lime hover:bg-white text-ink-primary py-4 rounded-none"
           />
           <Button
-            path="/"
+            path="#services"
             text="استعرض الخدمات"
             styles="border border-muted text-white hover:text-lime hover:border 
             hover:border-lime py-4 rounded-none "

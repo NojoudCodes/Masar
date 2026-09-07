@@ -2,7 +2,7 @@ type CardProps= {
   number: string,
   title: string;
   paragraph: string;
-  styles: string;
+  styles?: string;
 }
 
 export default function ProcessCard({ number, title, paragraph, styles }: CardProps) {
