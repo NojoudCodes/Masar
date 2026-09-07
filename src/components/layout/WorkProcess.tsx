@@ -33,7 +33,7 @@ export default function WorkProcess() {
     }
   ]
   return (
-    <Section sectionId="process" styles="bg-ink-secondary py-32 px-5 xl:px-15">
+    <Section sectionId="process" styles="bg-ink-secondary">
       <Subtitle subtitle="آلية العمل" />
       <h2 className="font-semibold text-4xl mt-4">من الحجز إلى التسليم، أربع خطوات</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-20">

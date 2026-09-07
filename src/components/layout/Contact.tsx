@@ -6,6 +6,35 @@ import Button from "../ui/Button";
 
 export default function Contact() {
   const [isMessageOpen, setIsMessage] = useState(false)
+  const [form, setForm] = useState({
+    company: "",
+    email: "",
+    shipping: "land"
+  })
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setForm({...form, [e.target.id]: e.target.value})
+  }
+
+  const shippingMethods = [
+    {
+      id: 1,
+      shippingType: "land",
+      shippingLabel: "نوع الشحن - بري",
+    },
+    {
+      id: 2,
+      shippingType: "maritime",
+      shippingLabel: "نوع الشحن - بحري",
+    },
+    {
+      id: 3,
+      shippingType: "air",
+      shippingLabel: "نوع الشحن - جوي",
+    }
+  ]
 
   return (
     <Section 
@@ -29,6 +58,8 @@ export default function Contact() {
               id="company"
               placeholder="اسم الشركة"
               className="w-full py-2"
+              value={form.company}
+              onChange={handleChange}
             />
           </div>
           <div className="bg-ink-tertiary py-1 px-4 rounded-xl">
@@ -37,13 +68,20 @@ export default function Contact() {
               id="email" 
               placeholder="البريد الالكتروني" 
               className="w-full py-2"
+              value={form.email}
+              onChange={handleChange}
             />
           </div>
           <div className="bg-ink-tertiary py-1 px-4 rounded-xl">
             <select id="shipping" className="w-full py-3">
-              <option value="land">نوع الشحن - بري</option>
-              <option value="maritime">نوع الشحن - بحري</option>
-              <option value="air">نوع الشحن - جوي</option>
+              {shippingMethods.map((shipping) => (
+                <option
+                  key={shipping.id}
+                  value={shipping.shippingType}
+                >
+                  {shipping.shippingLabel}
+                </option>
+              ))}
             </select>
           </div>
           <button 

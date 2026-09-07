@@ -35,7 +35,7 @@ export default function Services() {
     }
   ]
   return (
-    <Section sectionId="services" styles="bg-ink-secondary py-32 px-5 xl:px-15">
+    <Section sectionId="services" styles="bg-ink-secondary">
       <div className="flex flex-col xl:flex-row xl:justify-around xl:items-center gap-5 xl:gap-0">
         <div>
           <Subtitle subtitle="خدماتنا" />

@@ -37,7 +37,7 @@ export default function Network() {
   return (
     <Section
       sectionId="network" 
-      styles="flex flex-col xl:flex-row xl:justify-between xl:items-center gap-10 xl:gap-0 py-32 px-5 xl:px-15"
+      styles="flex flex-col xl:flex-row xl:justify-between xl:items-center gap-10 xl:gap-0"
     >
       <div className="w-full xl:flex-1">
         <Subtitle subtitle="شبكتنا" />
