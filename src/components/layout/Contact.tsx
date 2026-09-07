@@ -49,6 +49,7 @@ export default function Contact() {
       <div className="w-full xl:flex-1 bg-ink-secondary p-7 mt-8 xl:mt-0">
         <form onSubmit={(e: React.SubmitEvent<HTMLFormElement>) => {
           e.preventDefault();
+          console.log(form)
           setIsMessage(true)
           
         }} className="flex flex-col gap-5">
@@ -73,7 +74,12 @@ export default function Contact() {
             />
           </div>
           <div className="bg-ink-tertiary py-1 px-4 rounded-xl">
-            <select id="shipping" className="w-full py-3">
+            <select 
+              id="shipping" 
+              className="w-full py-3"
+              value={form.shipping} 
+              onChange={handleChange}
+            >
               {shippingMethods.map((shipping) => (
                 <option
                   key={shipping.id}
