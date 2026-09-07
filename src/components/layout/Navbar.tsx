@@ -8,6 +8,30 @@ import Logo from "../ui/Logo";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
+  const links = [
+    {
+      id: 1,
+      label: "الخدمات",
+      path: "#services",
+
+    },
+    {
+      id: 2,
+      label: "الشبكة",
+      path: "#network",
+    },
+    {
+      id: 3,
+      label: "آلية العمل",
+      path: "#process",
+    },
+    {
+      id: 4,
+      label: "تواصل",
+      path: "#contact",
+    },
+  ]
+
   return (
     <nav className="fixed left-0 right-0 top-0 flex justify-between items-center bg-ink-secondary h-20 px-15 shadow-line shadow-md">
       <div className="flex items-center gap-2">
@@ -20,10 +44,13 @@ export default function Navbar() {
         <Logo />
       </div>
       <div className="hidden lg:flex items-center gap-4">
-        <a href="#services" className="text-paper-secondary hover:text-lime text-sm">الخدمات</a>
-        <a href="#network" className="text-paper-secondary hover:text-lime text-sm">الشبكة</a>
-        <a href="#process" className="text-paper-secondary hover:text-lime text-sm">آلية العمل</a>
-        <a href="#contact" className="text-paper-secondary hover:text-lime text-sm">تواصل</a>
+        {links.map((link) => (
+          <a 
+            href={link.path}
+            key={link.id}
+            className="text-paper-secondary hover:text-lime text-sm"
+          >{link.label}</a>
+        ))}
       </div>
       <div className={`${isOpen ? "fixed" : "hidden"} inset-0 bg-ink-tertiary w-screen shadow-line shadow-2xl`}>
         <div className="absolute left-9 top-3.5">
@@ -34,26 +61,14 @@ export default function Navbar() {
           />
         </div>
         <div className="flex flex-col items-center mt-32 gap-4 h-full">
-          <a 
-            href="#services" 
-            className="text-paper-secondary hover:text-lime text-sm" 
-            onClick={() => setIsOpen(false)}
-          >الخدمات</a>
-          <a 
-            href="#network" 
-            className="text-paper-secondary hover:text-lime text-sm" 
-            onClick={() => setIsOpen(false)}
-          >الشبكة</a>
-          <a 
-            href="#process" 
-            className="text-paper-secondary hover:text-lime text-sm" 
-            onClick={() => setIsOpen(false)}
-          >آلية العمل</a>
-          <a 
-            href="#contact" 
-            className="text-paper-secondary hover:text-lime text-sm" 
-            onClick={() => setIsOpen(false)}
-          >تواصل</a>
+          {links.map((link) => (
+            <a 
+              href={link.path}
+              key={link.id}
+              className="text-paper-secondary hover:text-lime text-sm" 
+              onClick={() => setIsOpen(false)}
+            >{link.label}</a>
+          ))}
         </div>
       </div>
       <Button

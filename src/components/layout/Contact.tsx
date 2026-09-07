@@ -1,10 +1,11 @@
+import Section from "../ui/Section";
 import Subtitle from "../ui/Subtitle";
 
 export default function Contact() {
   return (
-    <section 
-      id="contact" 
-      className="flex flex-col xl:flex-row justify-around xl:items-center bg-ink-primary gap-10 xl:gap-10 py-32 px-5 xl:px-15"
+    <Section 
+      sectionId="contact" 
+      styles="flex flex-col xl:flex-row justify-around xl:items-center bg-ink-primary gap-10 xl:gap-10 py-32 px-5 xl:px-15"
     >
       <div className="w-full xl:flex-2">
         <Subtitle subtitle="تواصل معنا" />
@@ -39,6 +40,6 @@ export default function Contact() {
           <button className="font-semibold xl:text-xl py-3 bg-lime hover:bg-white text-ink-primary rounded-xl">اطلب عرض سعر</button>
         </form>
       </div>
-    </section>
+    </Section>
   )
 }

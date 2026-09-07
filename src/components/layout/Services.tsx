@@ -5,10 +5,11 @@ import { MdAirlines } from "react-icons/md";
 import { TbSpeedboat } from "react-icons/tb";
 import { IoAirplaneOutline } from "react-icons/io5";
 import { BsBuildings } from "react-icons/bs";
+import Section from "../ui/Section";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-ink-secondary py-32 px-5 xl:px-15">
+    <Section sectionId="services" styles="bg-ink-secondary py-32 px-5 xl:px-15">
       <div className="flex flex-col xl:flex-row xl:justify-around xl:items-center gap-5 xl:gap-0">
         <div>
           <Subtitle subtitle="خدماتنا" />
@@ -42,6 +43,6 @@ export default function Services() {
           paragraph="مساحات تخزين ذكية مع إدارة مخزون مباشرة عبر لوحة التحكم."
         />
       </div>
-    </section>
+    </Section>
   )
 }

@@ -1,9 +1,10 @@
 import ProcessCard from "../ui/ProcessCard";
+import Section from "../ui/Section";
 import Subtitle from "../ui/Subtitle";
 
 export default function WorkProcess() {
   return (
-    <section id="process" className="bg-ink-secondary py-32 px-5 xl:px-15">
+    <Section sectionId="process" styles="bg-ink-secondary py-32 px-5 xl:px-15">
       <Subtitle subtitle="آلية العمل" />
       <h2 className="font-semibold text-4xl mt-4">من الحجز إلى التسليم، أربع خطوات</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-20">
@@ -32,6 +33,6 @@ export default function WorkProcess() {
           styles=""
         />
       </div>
-    </section>
+    </Section>
   )
 }

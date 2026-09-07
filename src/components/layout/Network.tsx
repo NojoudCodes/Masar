@@ -1,3 +1,4 @@
+import Section from "../ui/Section";
 import Subtitle from "../ui/Subtitle";
 
 export default function Network() {
@@ -34,9 +35,9 @@ export default function Network() {
     },
   ]
   return (
-    <section 
-      id="network" 
-      className="flex flex-col xl:flex-row xl:justify-between xl:items-center gap-10 xl:gap-0 py-32 px-5 xl:px-15"
+    <Section
+      sectionId="network" 
+      styles="flex flex-col xl:flex-row xl:justify-between xl:items-center gap-10 xl:gap-0 py-32 px-5 xl:px-15"
     >
       <div className="w-full xl:flex-1">
         <Subtitle subtitle="شبكتنا" />
@@ -54,6 +55,6 @@ export default function Network() {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }
