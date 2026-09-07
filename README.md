@@ -14,12 +14,19 @@ A concept marketing site for a fictional logistics & shipping company — built 
 
 ## ✨ Overview
 
-Masar ("route/path" in Arabic) is positioned as a precision-focused logistics brand — the design leans into speed, tracking, and data rather than the usual truck/plane clichés. Key ideas:
+Masar — meaning “route” or “path” in Arabic — is a modern Arabic-first landing page concept for a logistics and shipping company.
 
-- A dot-grid background evoking a map/route interface
-- A live-feeling shipment tracking widget
-- Monospace numerals for stats and hub coordinates, set against bold Arabic display type
-- A single high-contrast accent color (lime) on near-black, instead of the typical orange/navy logistics palette
+The design uses a dark, high-contrast visual identity with lime accents to create a sense of speed, reliability, and movement while keeping the interface clean and focused on conversion.
+
+Key design ideas include:
+
+- A strong RTL-first Arabic layout with bold typography and clear visual hierarchy.
+- A near-black and lime color palette that gives the brand a modern and distinctive logistics identity.
+- Clean, structured sections for introducing the company, its services, and its value proposition.
+- A responsive layout designed to work across desktop and mobile screen sizes.
+- A focused quote-request form that allows potential customers to submit their company information, email, and preferred shipping method.
+- Interactive UI feedback after submitting the form, giving users a clear confirmation that their request has been received.
+- A reusable React component structure for sections, buttons, subtitles, and page content.
 
 ## 🛠 Tech Stack
 
